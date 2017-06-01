@@ -1,21 +1,18 @@
-﻿
-
-
-$('#header .menu').click(function() {
+﻿$('#header .menu').click(function() {
 	$('#header .topmenu').slideToggle(400);
 	$(this).toggleClass('open');
 });
 
-	$('.tov_slider').owlCarousel({
-		loop:true,
-		margin:0,
-		 items:1,
-		nav:true,
-		navText:false,
-		dots:true,
-		
-	});
-	
+$('.tov_slider').owlCarousel({
+	loop:true,
+	margin:0,
+	 items:1,
+	nav:true,
+	navText:false,
+	dots:true,
+
+});
+
 $('.slider_mini').owlCarousel({
     loop:false,
     margin:0,
@@ -41,82 +38,6 @@ $('.slider_mini').owlCarousel({
         }
     }
 });
-
-$(".numbox").mask("+7 (999) 999 99 99");
-
-$('#header .right_block .button').click(function() {
-		$('#call_modal').arcticmodal();
-	});
-	
-	$('#footer .cont_block .button').click(function() {
-		$('#call_modal').arcticmodal();
-	});
-	
-	$('.b24-web-form-popup-btn-10').click(function() {
-		$('#call_modal2').arcticmodal();
-	});
-	
-	
-	
-	$(document).ready(function(){
-	
-	function falidator(item) {
-		check = true;
-		$(item).find('input').each(function() {
-			if($(this).hasClass('required') && $(this).val() == '') {
-				check = false;
-				$(this).css('border', '1px red solid');
-			} else {
-				$(this).css('border', '1px transparent solid');
-			}
-		});
-		if(check) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	/**************************/
-	$("#form1").submit(function(){
-		if(!falidator(this)) return false;
-		$.ajax({ 
-			type: "POST", 
-			url: "php/form1.php",
-			data: $("#form1").serialize(),
-			success: function(html) { 
-			
-			}
-		});
-		
-		$('#call_modal').arcticmodal('close');
-		$('#spasibo').arcticmodal();
-		$('#form1').trigger("reset");
-		return false;
-	});
-	
-	$("#form2").submit(function(){
-		if(!falidator(this)) return false;
-		$.ajax({ 
-			type: "POST", 
-			url: "php/form2.php",
-			data: $("#form2").serialize(),
-			success: function(html) { 
-			
-			}
-		});
-		
-		$('#call_moda2').arcticmodal('close');
-		$('#spasibo').arcticmodal();
-		$('#form2').trigger("reset");
-		return false;
-	});
-	/**************************/
-	
-	
-	
-});
-
 
 $('#mini1 .slide').click(function() {
 	$('#mini1 .slide').removeClass('active');
